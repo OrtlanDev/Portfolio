@@ -8,11 +8,9 @@ import 'src/styles/global.css';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>💼 Portfolio Orlando Torres Rojas</title>
-
-    <!-- Importa PhotoSwipe globalmente para que cargue sus controles -->
+    <title>Portfolio - Orlando Torres Rojas</title>
     <link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css" />
   </head>
 
@@ -21,7 +19,6 @@ import 'src/styles/global.css';
     <slot />
     <Footer />
 
-    <!-- Importa el JS convertido a módulo -->
-    <script type="module" src="/public/scripts/photoswipe-init.js"></script>
+    <script is:inline type="module" src="/public/scripts/photoswipe-init.js"></script>
   </body>
 </html>
