@@ -1,25 +1,25 @@
 ---
-import Logo from "@/components/ui/Logo.astro";
-import NavItem from "@/components/ui/NavItem.astro";
-import BracketsCurly from "phosphor-astro/BracketsCurly.astro";
-import HouseLine from "phosphor-astro/HouseLine.astro";
-import MailBox from "phosphor-astro/MailBox.astro";
-import Quotes from "phosphor-astro/Quotes.astro";
-import ButtonTheme from "./ButtonTheme.astro";
+import Logo from '@/components/ui/Logo.astro';
+import NavItem from '@/components/ui/NavItem.astro';
+import BracketsCurly from 'phosphor-astro/BracketsCurly.astro';
+import HouseLine from 'phosphor-astro/HouseLine.astro';
+import Mailbox from 'phosphor-astro/Mailbox.astro';
+import Quotes from 'phosphor-astro/Quotes.astro';
+import ButtonTheme from './ButtonTheme.astro';
 ---
 
 <!-- # it's ok -->
 <div class="fixed top-0 z-50 w-full h-16 px-10 flex-between border-b border-border/25 backdrop-blur-lg">
-    <Logo />
-    <!-- menu -->
-    <nav class="flex-center gap-4">
-        <ButtonTheme />
-        <hr class="border-l border-border/25 h-8" />
-        <NavItem href="hero-section" className={"gap-2 font-light text-lg"}><HouseLine width={20} />Inicio</NavItem>
-        <NavItem href="projects-section" className={"gap-2 font-light text-lg"}
-            ><BracketsCurly width={20} /> Proyectos</NavItem
-        >
-        <NavItem href="about-section" className={"gap-2 font-light text-lg"}><Quotes width={20} />Sobre mí</NavItem>
-        <NavItem href="contact-section" className={"gap-2 font-light text-lg"}><MailBox width={20} />Contacto</NavItem>
-    </nav>
+  <Logo />
+  <!-- menu -->
+  <nav class="flex-center gap-4">
+    <ButtonTheme />
+    <hr class="border-l border-border/25 h-8" />
+    <NavItem href="hero-section" className={'gap-2 font-light text-lg'}><HouseLine width={20} />Inicio</NavItem>
+    <NavItem href="projects-section" className={'gap-2 font-light text-lg'}
+      ><BracketsCurly width={20} /> Proyectos</NavItem
+    >
+    <NavItem href="about-section" className={'gap-2 font-light text-lg'}><Quotes width={20} />Sobre mí</NavItem>
+    <NavItem href="contact-section" className={'gap-2 font-light text-lg'}><Mailbox width={20} />Contacto</NavItem>
+  </nav>
 </div>

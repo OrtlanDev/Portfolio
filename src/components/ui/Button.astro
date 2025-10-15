@@ -1,8 +1,10 @@
 ---
+import type { Fragment } from 'astro/compiler-runtime';
+
 interface ButtonProps {
-    href: string;
-    variant: "primary" | "secondary";
-    className?: string;
+  href: string;
+  variant: 'primary' | 'secondary';
+  className?: string;
 }
 
 const { variant, href, className } = Astro.props as ButtonProps;
@@ -10,14 +12,14 @@ const { variant, href, className } = Astro.props as ButtonProps;
 
 <!-- # it's ok -->
 <a
-    class:list={[
-        className,
-        "button relative",
-        variant == "primary"
-            ? "text-text-button-primary bg-button-primary hover:bg-button-primary-hover"
-            : "text-text-primary hover:bg-button-secondary-hover/50",
-    ]}
-    href={href}
+  class:list={[
+    className,
+    'button relative',
+    variant == 'primary'
+      ? 'text-text-button-primary bg-button-primary hover:bg-button-primary-hover'
+      : 'text-text-primary hover:bg-button-secondary-hover/50',
+  ]}
+  href={href}
 >
-    <slot />
+  <slot />
 </a>
