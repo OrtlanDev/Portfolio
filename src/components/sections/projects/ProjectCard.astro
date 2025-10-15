@@ -62,7 +62,7 @@ const lastProjectNumber = 6;
     <GlassmorphicBackground className="card-glass-3 opacity-75 -top-2 -left-2" />
     <GlassmorphicBackground className="card-glass-4 top-0 left-0 flex-center opacity-0 cursor-pointer z-20">
       <a
-        href={`/img/projects/${images[0]}`}
+        href={`/projects/${images[0]}`}
         data-pswp-width="1600"
         data-pswp-height="900"
         aria-label={`Abrir galería de ${name}`}
@@ -81,7 +81,7 @@ const lastProjectNumber = 6;
     </GlassmorphicBackground>
     <img
       class="card-img z-10 border-2 border-border/55 transition-all duration-150 ease-in-out"
-      src={`/img/projects/${images[0]}`}
+      src={`/projects/${images[0]}`}
       alt={`Screenshot of project ${name}`}
       height={50}
       width={600}
@@ -93,7 +93,7 @@ const lastProjectNumber = 6;
           .slice(1)
           .map((img, index) => (
             <a
-              href={`/img/projects/${img}`}
+              href={`/projects/${img}`}
               data-pswp-width="1600"
               data-pswp-height="900"
               data-caption={`Screenshot ${index + 1} of ${name}`}
