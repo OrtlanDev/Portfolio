@@ -1,0 +1,20 @@
+---
+interface TagSetProps {
+    data: string[];
+}
+const { data } = Astro.props as TagSetProps;
+---
+
+<div>
+    {
+        data.length > 0 && (
+            <ul class="flex flex-wrap gap-2 mt-2">
+                {data.map((data) => (
+                    <li class="flex-center px-3 py-1 bg-border/25 border-2 border-border/55 text-text-secondary font-cascadia-code! text-sm font-medium ">
+                        {data}
+                    </li>
+                ))}
+            </ul>
+        )
+    }
+</div>

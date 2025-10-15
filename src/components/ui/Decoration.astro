@@ -1,0 +1,26 @@
+---
+interface DecorationProps {
+    className: string;
+}
+const { className } = Astro.props as DecorationProps;
+const decorationClass = "p-2 md:p-2.5 lg:p-3 border-2";
+---
+
+<!-- # it's ok -->
+<div class:list={["absolute grid grid-cols-2", className]}>
+    <div class:list={[decorationClass, "border-border/25 rounded-tl-radius"]}>
+        <div class:list={[decorationClass, "border-border/50"]}>
+            <div class:list={[decorationClass, "border-border/75"]}></div>
+        </div>
+    </div>
+    <div class:list={[decorationClass, "border-border/25 border-l-0 rounded-r-radius"]}>
+        <div class:list={[decorationClass, "border-border/50"]}>
+            <div class:list={[decorationClass, "border-border/75"]}></div>
+        </div>
+    </div>
+    <div class:list={[decorationClass, "border-border/25 border-t-0 rounded-b-radius"]}>
+        <div class:list={[decorationClass, "border-border/50"]}>
+            <div class:list={[decorationClass, "border-border/75"]}></div>
+        </div>
+    </div>
+</div>

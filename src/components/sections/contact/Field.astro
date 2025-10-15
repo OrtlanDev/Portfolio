@@ -1,0 +1,81 @@
+---
+// Props
+const {
+    id = `field-${Math.random().toString(36).slice(2, 8)}`,
+    name = "",
+    label = "Label",
+    type = "text",
+    textarea = false,
+    rows = 4,
+    required = true,
+    disabled = false,
+    autocomplete = "off",
+    ariaInvalid = false,
+} = Astro.props;
+
+const fieldClass =
+    "w-full p-2 text-text-primary font-light text-xl border-b outline-0 border-border/25 focus:border-primary transition-all";
+const line =
+    "after:content-[''] after:absolute after:top-10 after:left-[9.5px] after:w-0.5 after:h-12 after:bg-border/55";
+---
+
+<div
+    x-data="{ focused: false, value: '', init() { this.value = $refs.input?.value ?? '' } }"
+    x-init="init()"
+    class:list={[line, "w-full relative flex gap-4"]}
+>
+    <!-- icon -->
+    <div
+        class="w-min h-min p-1 border-2 -ml-[7px] rotate-45 border-border/55 text-text-secondary transition-all"
+        :class="(focused || value) && 'text-primary!'"
+    >
+        <div class="-rotate-45">
+            <slot />
+        </div>
+    </div>
+    <!-- field container -->
+    <div class="relative w-full">
+        <!-- textarea & input -->
+        {
+            textarea ? (
+                <textarea
+                    id={id}
+                    name={name}
+                    rows={rows}
+                    class:list={[fieldClass, "resize-none"]}
+                    x-ref="input"
+                    x-on:focus="focused = true"
+                    x-on:blur="focused = false"
+                    x-on:input="value = $event.target.value"
+                    {required}
+                    {disabled}
+                    autocomplete={autocomplete}
+                    aria-invalid={ariaInvalid ? "true" : "false"}
+                />
+            ) : (
+                <input
+                    id={id}
+                    name={name}
+                    type={type}
+                    class={fieldClass}
+                    x-ref="input"
+                    x-on:focus="focused = true"
+                    x-on:blur="focused = false"
+                    x-on:input="value = $event.target.value"
+                    {required}
+                    {disabled}
+                    autocomplete={autocomplete}
+                    aria-invalid={ariaInvalid ? "true" : "false"}
+                />
+            )
+        }
+        <!-- label -->
+        <label
+            for={id}
+            class:list={"absolute left-2 top-1 text-text-primary text-lg transition-all font-light"}
+            :class="(focused || value) && '-translate-y-7 text-text-secondary!'"
+        >
+            {label}
+        </label>
+    </div>
+</div>

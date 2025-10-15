@@ -1,0 +1,59 @@
+---
+import At from 'phosphor-astro/At.astro';
+import ChatCircleDots from 'phosphor-astro/ChatCircleDots.astro';
+import MailBox from 'phosphor-astro/MailBox.astro';
+import User from 'phosphor-astro/User.astro';
+import Anchor from '../ui/Anchor.astro';
+import Decoration from '../ui/Decoration.astro';
+import Title from '../ui/Title.astro';
+import Field from './contact/Field.astro';
+
+const lineDecoration = "after:content-[''] after:absolute after:w-0.5 after:top-10 after:left-2.5 after:bg-border/55";
+---
+
+<section class="relative w-full h-[calc(100vh-4rem)] flex-center flex-col gap-16">
+  <!-- decoration -->
+  <Decoration className="top-4 left-4  md:top-10 md:left-10" />
+  <Decoration className="top-4 right-4 md:top-10 md:right-10 rotate-90" />
+  <Decoration className="bottom-4 left-4 md:bottom-10 md:left-10 -rotate-90" />
+  <Decoration className="bottom-4 right-4 md:bottom-10 md:right-10 rotate-180" />
+  <!-- title -->
+  <Title>
+    <div class="mb-6 md:mb-0 md:mr-2 p-2 w-12 h-12 border-2 bg-border/20 border-border/55 rotate-45">
+      <MailBox class="-rotate-45 w-full h-full text-primary" />
+    </div>
+    <h2>Contáctame</h2>
+  </Title>
+  <!-- form -->
+  <form id="contact-form" class="p-6 w-110 sm:w-125 mb-10 sm:mb-0 max-w-350 flex flex-col gap-2">
+    <div class="flex flex-col gap-12">
+      <!-- name -->
+      <Field label="Nombre" name="Name" required={true}>
+        <User width={24} />
+      </Field>
+      <!-- mail -->
+      <Field label="Correo" name="Email" type="email" required={true}>
+        <At width={24} />
+      </Field>
+      <!-- message -->
+      <Field label="Mensaje" name="Message" textarea={true} required={true}>
+        <ChatCircleDots width={24} />
+      </Field>
+    </div>
+    <!-- decoration: base line -->
+    <div
+      class="relative after:content-[''] after:absolute after:-top-[56.5px] after:left-[9.5px] after:w-0.5 after:h-[41px] after:bg-border/55
+            before:content-[''] before:absolute before:bottom-3.5 before:left-0 before:w-5 before:h-0.5 before:bg-border/55"
+    >
+    </div>
+
+    <button
+      type="submit"
+      class="button flex-center text-xl text-text-primary bg-button-primary hover:bg-button-primary-hover focus:bg-button-primary-hover outline-4 outline-transparent focus:outline-primary/10 hover:outline-primary/10 transition-all"
+    >
+      Enviar
+    </button>
+  </form>
+  <Anchor id="contact-section" className="-top-16" />
+  <script src="./contact/emailSystem.js"></script>
+</section>

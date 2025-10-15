@@ -1,0 +1,14 @@
+---
+import DesktopHeader from "./DesktopHeader.astro";
+import MobileHeader from "./MobileHeader.astro";
+---
+
+<!-- # it's ok -->
+<header>
+    <div class="md-lg:hidden">
+        <MobileHeader />
+    </div>
+    <div class="hidden md-lg:block!">
+        <DesktopHeader />
+    </div>
+</header>

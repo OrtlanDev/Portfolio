@@ -1,0 +1,41 @@
+---
+import Logo from "@/components/ui/Logo.astro";
+import NavItem from "@/components/ui/NavItem.astro";
+import Code from "phosphor-astro/Code.astro";
+import Envelope from "phosphor-astro/Envelope.astro";
+import HouseLine from "phosphor-astro/HouseLine.astro";
+import List from "phosphor-astro/List.astro";
+import Quotes from "phosphor-astro/Quotes.astro";
+import X from "phosphor-astro/X.astro";
+import ButtonTheme from "./ButtonTheme.astro";
+
+const navItemClass = "gap-4 text-lg font-light";
+---
+
+<!-- # it's ok -->
+<div class="fixed top-0 z-50 w-full flex flex-col" x-data="{open: false}">
+    <!-- header -->
+    <div class="px-4 w-full h-16 flex-between border-b border-border/25 backdrop-blur-lg">
+        <button class="button text-text-primary" @click="open = !open">
+            <div x-show="!open"><List width={20} /></div>
+            <div x-show="open"><X width={20} /></div>
+        </button>
+        <Logo />
+        <ButtonTheme />
+    </div>
+    <!-- menu -->
+    <nav
+        x-show="open"
+        x-transition
+        class="w-[calc(100%-2rem)] h-min m-4 p-4 border border-border/25 bg-background/75 backdrop-blur-lg shadow-xl shadow-shadow/25"
+    >
+        <div @click="open = !open">
+            <NavItem href="hero-section" className={navItemClass}><HouseLine width={20} />Inicio</NavItem>
+            <NavItem href="projects-section" className={navItemClass}><Code width={20} /> Proyectos</NavItem>
+            <NavItem href="about-section" className={navItemClass}><Quotes width={20} />Sobre mí</NavItem>
+            <NavItem href="contact-section" className={navItemClass}><Envelope width={20} />Contacto</NavItem>
+        </div>
+        <hr class="border-border/25 my-4" />
+        <p class="text-text-secondary font-light text-center">Desarrollado con amor ❤️ y café ☕</p>
+    </nav>
+</div>

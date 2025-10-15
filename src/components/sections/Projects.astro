@@ -1,0 +1,53 @@
+---
+import Title from '@/components/ui/Title.astro';
+import { getCollection } from 'astro:content';
+import BracketsCurly from 'phosphor-astro/BracketsCurly.astro';
+import Anchor from '../ui/Anchor.astro';
+import Decoration from '../ui/Decoration.astro';
+import ProjectCard from './projects/ProjectCard.astro';
+
+const projects = await getCollection('projects');
+---
+
+<section class="relative w-full pt-24 pb-36 lg:pb-52 px-4 md:px-10 flex-center flex-col">
+  <!-- decoration -->
+  <Decoration className="top-4 left-4 md:top-10 md:left-10" />
+  <Decoration className="top-4 right-4 md:top-10 md:right-10 rotate-90" />
+  <Decoration className="bottom-4 left-4 md:bottom-10 md:left-10 -rotate-90" />
+  <Decoration className="bottom-4 right-4 md:bottom-10 md:right-10 rotate-180" />
+  <!-- title -->
+  <Title>
+    <div class="mb-6 md:mb-0 md:mr-2 p-2 w-12 h-12 border-2 bg-border/20 border-border/55 rotate-45">
+      <BracketsCurly class="-rotate-45 w-full h-full text-primary" />
+    </div>
+    <h2>Proyectos</h2>
+    <h2>Seleccionados</h2>
+  </Title>
+  <!-- projects -->
+  <div class="mt-12 lg:mt-24 w-full max-w-300 flex-center flex-col gap-6 lg:gap-12">
+    {
+      projects
+        .sort((projA, projB) => projA.data.order - projB.data.order)
+        .map((project) => {
+          const { slug, data } = project;
+          const { name, technologies, tag, category, order, date, images, description, links, projectType } = data;
+          return (
+            <ProjectCard
+              name={name}
+              category={category}
+              tag={tag}
+              images={images}
+              technologies={technologies}
+              description={description}
+              date={date}
+              order={order}
+              links={links}
+              projectType={projectType}
+            />
+          );
+        })
+    }
+  </div>
+  <!-- anchor -->
+  <Anchor id="projects-section" className="-top-16" />
+</section>

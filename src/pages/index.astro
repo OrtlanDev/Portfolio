@@ -1,0 +1,19 @@
+---
+import About from "@/components/sections/About.astro";
+import Contact from "@/components/sections/Contact.astro";
+import Hero from "@/components/sections/Hero.astro";
+import Projects from "@/components/sections/Projects.astro";
+import SkillsBar from "@/components/ui/SkillsBar.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout>
+    <!-- ! delete: overflow-hidden is provisional -->
+    <main class="flex flex-col w-full overflow-hidden justify-center items-center">
+        <Hero />
+        <SkillsBar />
+        <Projects />
+        <About />
+        <Contact />
+    </main>
+</Layout>

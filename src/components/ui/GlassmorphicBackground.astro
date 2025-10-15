@@ -1,0 +1,16 @@
+---
+interface GlassmorphicBackgroundProps {
+    className: string;
+}
+
+const { className } = Astro.props as GlassmorphicBackgroundProps;
+---
+
+<div
+    class:list={[
+        "absolute p-2 w-full h-full bg-border/25 border-2 border-border/55 transition-all duration-150 ease-in-out",
+        className,
+    ]}
+>
+    <slot />
+</div>

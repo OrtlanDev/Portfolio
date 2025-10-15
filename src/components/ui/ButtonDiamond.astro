@@ -1,0 +1,10 @@
+---
+interface ButtonDiamondProps {
+    className: string;
+}
+const { className } = Astro.props as ButtonDiamondProps;
+---
+
+<div class:list={["w-10 h-10 flex-center border-2 border-border/25", className]}>
+    <slot />
+</div>

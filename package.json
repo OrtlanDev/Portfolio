@@ -1,0 +1,26 @@
+{
+    "name": "portfolio",
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/alpinejs": "^0.4.8",
+        "@tailwindcss/vite": "^4.1.11",
+        "@types/alpinejs": "^3.13.11",
+        "alpinejs": "^3.14.9",
+        "astro": "^5.12.8",
+        "motion": "^12.23.12",
+        "phosphor-astro": "^2.1.0",
+        "photoswipe": "^5.4.4",
+        "tailwindcss": "^4.1.11",
+        "toastify-js": "^1.12.0"
+    },
+    "devDependencies": {
+        "@types/toastify-js": "^1.12.4"
+    }
+}

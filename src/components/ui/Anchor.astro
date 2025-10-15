@@ -1,0 +1,9 @@
+---
+interface AnchorProps {
+    id: string;
+    className: string;
+}
+const { className, id } = Astro.props as AnchorProps;
+---
+
+<div class:list={["absolute", className]} id={id}></div>

@@ -1,0 +1,39 @@
+---
+import Anchor from '../ui/Anchor.astro';
+import Decoration from '../ui/Decoration.astro';
+import Photo from './hero/Photo.astro';
+---
+
+<section class="pt-16 w-full h-screen flex-center flex-col gap-8 bg-conic-0 bg-background">
+  <!-- decoration -->
+  <Decoration className="top-20 left-4 md:top-26 md:left-10" />
+  <Decoration className="top-20 right-4 md:top-26 md:right-10 rotate-90" />
+  <Decoration className="bottom-4 right-4 md:bottom-10 md:right-10 rotate-180" />
+  <Decoration className="bottom-4 left-4 md:bottom-10 md:left-10 rotate-270" />
+
+  <!-- data -->
+  <div class="flex-center flex-col">
+    <div class="p-10">
+      <Photo />
+    </div>
+    <div class="flex flex-col gap-8 text-center mt-8">
+      <!-- name -->
+      <p class="text-2xl text-text-primary font-light">¡Hola! Soy Orlando</p>
+
+      <!-- role -->
+      <h2
+        class="text-4xl leading-12 sm:text-5xl sm:leading-16 lg:text-6xl lg:leading-20 text-text-primary font-extralight"
+      >
+        Diseñador <span class="text-primary font-sacramento sm:text-6xl text-5xl md:text-[4.5rem]">ux ui</span>
+        <br /> y Desarrollador <span class="font-sacramento sm:text-6xl text-5xl md:text-[4.5rem] text-primary italic"
+          >Frontend</span
+        >
+      </h2>
+    </div>
+  </div>
+  <h3 class="text-text-primary font-light text-md rounded-xs px-4 py-1 border border-border/25 bg-primary/10">
+    <span class="font-sacramento text-primary">1</span> años de experiencia laboral
+  </h3>
+  <!-- <Button variant="primary" className="rounded-xs">Contáctame</Button> -->
+  <Anchor id="hero-section" className="-top-26" />
+</section>

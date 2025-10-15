@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+
+const SKILLS = ['html', 'css', 'javascript', 'typescript', 'nextjs', 'react', 'tailwind', 'github', 'figma'];
+---
+
+<section class="relative w-full overflow-hidden bg-background backdrop-blur-md border-y-2 border-border/10">
+  <div class="skills flex items-center justify-center px-10 gap-30 w-full h-20">
+    {
+      SKILLS.map((skill) => (
+        <div>
+          {/* shadow */}
+          <Image
+            src={`/src/assets/svg/technologies/${skill}.svg`}
+            alt={skill}
+            height={35}
+            width={35}
+            class="absolute blur-xl"
+          />
+          <Image
+            src={`/src/assets/svg/technologies/${skill}.svg`}
+            alt={skill}
+            height={35}
+            width={35}
+            class="min-w-10"
+          />
+        </div>
+      ))
+    }
+  </div>
+</section>

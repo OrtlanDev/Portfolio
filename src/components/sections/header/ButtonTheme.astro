@@ -1,0 +1,10 @@
+---
+import MoonStars from "phosphor-astro/MoonStars.astro";
+import Sun from "phosphor-astro/Sun.astro";
+---
+
+<!-- # it's ok -->
+<button class="button" @click="theme = (theme == 'light' ? 'dark' : 'light')">
+    <Sun width={20} class="text-accent" x-show="theme == 'dark'" />
+    <MoonStars width={20} class="text-primary" x-show="theme == 'light'" />
+</button>

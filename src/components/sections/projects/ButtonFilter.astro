@@ -1,0 +1,12 @@
+---
+interface FilterButton {
+    text: string;
+    data: string;
+}
+
+const { text, data } = Astro.props as FilterButton;
+---
+
+<button class="filter-button px-3 py-1 button text-gray-400" data-filter={data}
+    ><span class="text-nowrap">{text}</span></button
+>

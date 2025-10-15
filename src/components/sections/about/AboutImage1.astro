@@ -1,0 +1,24 @@
+<!-- image -->
+<div class="absolute h-full right-20 scale-75">
+    <!-- Lampara -->
+    <div class="absolute right-25 w-10 bg-yellow-400 h-5 z-20 rounded-b-full"></div>
+    <!-- Luz de lámpara -->
+    <div class="absolute -right-45 -top-10 z-0" style="width: 600px; height: 600px; pointer-events: none;">
+        <svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="lamp-light" x1="300" y1="0" x2="300" y2="600" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#fffbe600" stop-opacity="0.85"></stop>
+                    <stop offset="0.15" stop-color="#ffe066" stop-opacity="0.25"></stop>
+                    <stop offset="1" stop-color="#fffbe6" stop-opacity="0"></stop>
+                </linearGradient>
+            </defs>
+            <polygon points="300,0 0,600 600,600" fill="url(#lamp-light)"></polygon>
+        </svg>
+    </div>
+    <!-- Image -->
+    <div class="w-105 z-0 absolute bottom-0 -right-10">
+        <img src="/src/assets/svg/programmer.svg" alt="programmer" />
+        <div class="absolute bg-background w-130 h-20 z-60"></div>
+        <div class="absolute bg-[#3F3D56]/15 w-130 h-20 z-60"></div>
+    </div>
+</div>
