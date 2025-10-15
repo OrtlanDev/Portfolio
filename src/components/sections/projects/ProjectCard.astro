@@ -2,7 +2,6 @@
 import Button from '@/components/ui/Button.astro';
 import GlassmorphicBackground from '@/components/ui/GlassmorphicBackground.astro';
 import TagSet from '@/components/ui/TagSet.astro';
-import { Image } from 'astro:assets';
 import ArrowSquareOut from 'phosphor-astro/ArrowSquareOut.astro';
 import GithubLogo from 'phosphor-astro/GithubLogo.astro';
 import LockSimple from 'phosphor-astro/LockSimple.astro';
@@ -80,8 +79,8 @@ const lastProjectNumber = 6;
         </div></a
       >
     </GlassmorphicBackground>
-    <Image
-      class:list="card-img z-10 border-2 border-border/55 transition-all duration-150 ease-in-out"
+    <img
+      class="card-img z-10 border-2 border-border/55 transition-all duration-150 ease-in-out"
       src={`/img/projects/${images[0]}`}
       alt={`Screenshot of project ${name}`}
       height={50}
