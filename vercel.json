@@ -1,0 +1,12 @@
+{
+  "framework": "astro",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
+  "rewrites": [
+    {
+      "source": "/img/(.*)",
+      "destination": "/img/$1"
+    }
+  ]
+}

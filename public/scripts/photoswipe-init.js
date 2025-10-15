@@ -2,7 +2,6 @@ import PhotoSwipeLightbox from 'photoswipe/lightbox';
 
 const initGalleries = async () => {
   const galleryEls = document.querySelectorAll('[id^="project-gallery-"]');
-  console.log(galleryEls);
   for (const galleryEl of galleryEls) {
     if (galleryEl.__pswpInit) continue;
 
