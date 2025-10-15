@@ -2,11 +2,5 @@
   "framework": "astro",
   "buildCommand": "pnpm run build",
   "outputDirectory": "dist",
-  "installCommand": "pnpm install",
-  "rewrites": [
-    {
-      "source": "/img/(.*)",
-      "destination": "/img/$1"
-    }
-  ]
+  "installCommand": "pnpm install"
 }
