@@ -10,6 +10,9 @@
     },
     "dependencies": {
         "@astrojs/alpinejs": "^0.4.8",
+        "@fontsource/cascadia-code": "^5.2.3",
+        "@fontsource/josefin-sans": "^5.2.8",
+        "@fontsource/sacramento": "^5.2.8",
         "@tailwindcss/vite": "^4.1.11",
         "@types/alpinejs": "^3.13.11",
         "alpinejs": "^3.14.9",

@@ -1,3 +1,8 @@
+@import '@fontsource/josefin-sans/300.css';
+@import '@fontsource/josefin-sans/400.css';
+@import '@fontsource/sacramento';
+@import '@fontsource/cascadia-code';
+
 @import 'tailwindcss';
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 @custom-variant light (&:where([data-theme="light"], [data-theme="light"] *));
